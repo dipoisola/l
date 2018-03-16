@@ -1,4 +1,4 @@
-package l.nine;
+package l.nine.one;
 
 public class ArrayQueueImpl {
 	private int[] arr = new int[4];
@@ -78,10 +78,12 @@ public class ArrayQueueImpl {
 		queue.enqueue(4);
 		queue.enqueue(1);
 		queue.enqueue(9);
+		queue.dequeue();
 		queue.enqueue(3);
 		queue.enqueue(9);
 		queue.enqueue(10);
 		queue.enqueue(12);
+		queue.dequeue();
 		
 		System.out.println(queue);
 		System.out.println(queue.size());
