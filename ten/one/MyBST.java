@@ -85,9 +85,10 @@ public class MyBST {
 
 	private int leafNodes(BinaryNode t) {
 		BinaryNode temp = t;
-		
-		if (t == null) return 0;
-		
+
+		if (t == null)
+			return 0;
+
 		if (temp.right == null && temp.left == null) {
 			return 1;
 		} else if (temp.right != null) {
@@ -96,40 +97,40 @@ public class MyBST {
 			return 1 + leafNodes(temp.right);
 		}
 	}
-	
+
 	public int size() {
 		return size;
 	}
-	
+
 	public boolean isEmpty() {
 		return root == null;
 	}
-	
+
 	public Integer findMin() {
-	      return findMin(root);
+		return findMin(root);
 	}
-	
+
 	private Integer findMin(BinaryNode t) {
 		BinaryNode temp = t;
-		
+
 		while (temp.left != null) {
 			temp = temp.left;
 		}
-		
+
 		return temp.element;
 	}
-	
+
 	public Integer findMax() {
-	      return findMax(root);
+		return findMax(root);
 	}
-	
+
 	private Integer findMax(BinaryNode t) {
 		BinaryNode temp = t;
-		
-		while(temp.right != null) {
+
+		while (temp.right != null) {
 			temp = temp.right;
 		}
-		
+
 		return temp.element;
 	}
 
@@ -174,7 +175,7 @@ public class MyBST {
 			}
 
 		}
-		
+
 		size++;
 	}
 
@@ -208,7 +209,7 @@ public class MyBST {
 		}
 		mybst.insert(12);
 		mybst.printTree();
-//		System.out.println(mybst.contains(2));
+		// System.out.println(mybst.contains(2));
 		System.out.println(mybst.leafNodes());
 
 		TreeSet<Integer> ts = new TreeSet<Integer>();
