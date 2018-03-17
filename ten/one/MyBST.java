@@ -8,6 +8,7 @@ import java.util.TreeSet;
 public class MyBST {
 	/** The tree root. */
 	private BinaryNode root;
+	int size;
 
 	public MyBST() {
 		root = null;
@@ -56,21 +57,8 @@ public class MyBST {
 		}
 	}
 
-	public boolean contains(Integer key){
-//		BinaryNode temp = this.root;
-		
-//		if (temp != null) {
-//			if (temp.element.compareTo(key) == 0) {
-//				return true;
-//			} else if (key.compareTo(temp.element) < 0 && temp.left != null) {
-//				contains(temp.left.element);
-//			} else if (key.compareTo(temp.element) > 0 && temp.right != null) {
-//				contains(temp.right.element);
-//			}
-//		}
-//		
-//		return false;
-		while(root != null) {
+	public boolean contains(Integer key) {
+		while (root != null) {
 			if (root.element.compareTo(key) == 0) {
 				return true;
 			} else if (key.compareTo(root.element) < 0 && root.left != null) {
@@ -83,9 +71,30 @@ public class MyBST {
 				return false;
 			}
 		}
-		
+
 		return false;
 	}
+
+	public Integer getRoot() {
+		return root.element;
+	}
+
+	public Integer leafNodes() {
+		return leafNodes(root);
+	}
+
+	private int leafNodes(BinaryNode t) {
+		
+	}
+	
+	public int size() {
+		return size;
+	}
+	
+	public boolean isEmpty() {
+		return root == null;
+	}
+
 	// Assume the data in the Node is an Integer.
 	public void insert(Integer x) {
 		if (root == null) {
@@ -127,6 +136,8 @@ public class MyBST {
 			}
 
 		}
+		
+		size++;
 	}
 
 	private class BinaryNode {
@@ -159,7 +170,8 @@ public class MyBST {
 		}
 		mybst.insert(12);
 		mybst.printTree();
-		System.out.println("=====" + mybst.contains(2));
+		System.out.println(mybst.contains(2));
+		System.out.println(mybst.size());
 
 		TreeSet<Integer> ts = new TreeSet<Integer>();
 
